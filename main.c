@@ -12,13 +12,18 @@
 #define _do_adjust(ARG) \
 do{ \
 	while(ARG != 0){    \
-		if(!set_##ARG(ry, ARG)){   \
+		switch(set_##ARG(ry, ARG)){    \
+		case 0:    \
 			printf("Sucessfully set " STRINGIFY(ARG) " to %x\n", ARG);    \
 			break;  \
-		} else {    \
-			printf("Failed to set" STRINGIFY(ARG) " \n");   \
-			err = -1; \
+		case EFAILED:						\
+			printf("Failed to set " STRINGIFY(ARG) " \n");   \
+			err = EFAILED; \
 			break;  \
+		case EUNREACHABLE:     \
+			printf("Executed code which should be unreachable " STRINGIFY(ARG) " \n");    \
+			err = EUNREACHABLE;    \
+			break;    \
 		}   \
 	} \
 }while(0);

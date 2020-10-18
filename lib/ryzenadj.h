@@ -12,6 +12,9 @@ extern "C" {
 #define RYZENADJ_MAJOR_VER 6
 #define RYZENADJ_MINIOR_VER 3
 
+#define EFAILED -1
+#define EUNREACHABLE -2
+
 enum ryzen_family {
         FAM_UNKNOWN = -1,
         FAM_RAVEN = 0,

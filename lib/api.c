@@ -87,7 +87,7 @@ do{ \
 		if(smu_service_req(ry->mp1_smu, OPT, &args) == 0x1){   \
 			return 0;   \
 		} else {    \
-			return -1;  \
+			return EFAILED;  \
 		} \
 }while(0);
 
@@ -103,6 +103,7 @@ EXP int CALL set_stapm_limit(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x14);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_fast_limit(ryzen_access ry, uint32_t value){
@@ -115,6 +116,7 @@ EXP int CALL set_fast_limit(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x15);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_slow_limit(ryzen_access ry, uint32_t value){
@@ -127,6 +129,7 @@ EXP int CALL set_slow_limit(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x16);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_slow_time(ryzen_access ry, uint32_t value){
@@ -139,6 +142,7 @@ EXP int CALL set_slow_time(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x17);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_stapm_time(ryzen_access ry, uint32_t value){
@@ -151,6 +155,7 @@ EXP int CALL set_stapm_time(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x18);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_tctl_temp(ryzen_access ry, uint32_t value){
@@ -163,6 +168,7 @@ EXP int CALL set_tctl_temp(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x19);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_vrm_current(ryzen_access ry, uint32_t value){
@@ -175,6 +181,7 @@ EXP int CALL set_vrm_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x1a);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_vrmsoc_current(ryzen_access ry, uint32_t value){
@@ -187,6 +194,7 @@ EXP int CALL set_vrmsoc_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x1b);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_vrmmax_current(ryzen_access ry, uint32_t value){
@@ -199,6 +207,7 @@ EXP int CALL set_vrmmax_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x1c);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_vrmsocmax_current(ryzen_access ry, uint32_t value){
@@ -211,6 +220,7 @@ EXP int CALL set_vrmsocmax_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x1d);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_psi0_current(ryzen_access ry, uint32_t value){
@@ -223,6 +233,7 @@ EXP int CALL set_psi0_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x1e);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_psi0soc_current(ryzen_access ry, uint32_t value){
@@ -235,6 +246,7 @@ EXP int CALL set_psi0soc_current(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		_do_adjust(0x20);
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_max_gfxclk_freq(ryzen_access ry, uint32_t value) {
@@ -247,6 +259,7 @@ EXP int CALL set_max_gfxclk_freq(ryzen_access ry, uint32_t value) {
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_min_gfxclk_freq(ryzen_access ry, uint32_t value) {
@@ -259,6 +272,7 @@ EXP int CALL set_min_gfxclk_freq(ryzen_access ry, uint32_t value) {
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_max_socclk_freq(ryzen_access ry, uint32_t value){
@@ -271,6 +285,7 @@ EXP int CALL set_max_socclk_freq(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_min_socclk_freq(ryzen_access ry, uint32_t value){
@@ -283,6 +298,7 @@ EXP int CALL set_min_socclk_freq(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_max_fclk_freq(ryzen_access ry, uint32_t value){
@@ -295,6 +311,7 @@ EXP int CALL set_max_fclk_freq(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_min_fclk_freq(ryzen_access ry, uint32_t value){
@@ -307,6 +324,7 @@ EXP int CALL set_min_fclk_freq(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_max_vcn(ryzen_access ry, uint32_t value){
@@ -319,6 +337,7 @@ EXP int CALL set_max_vcn(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_min_vcn(ryzen_access ry, uint32_t value){
@@ -331,6 +350,7 @@ EXP int CALL set_min_vcn(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_max_lclk(ryzen_access ry, uint32_t value){
@@ -343,6 +363,7 @@ EXP int CALL set_max_lclk(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_min_lclk(ryzen_access ry, uint32_t value){
@@ -355,6 +376,7 @@ EXP int CALL set_min_lclk(ryzen_access ry, uint32_t value){
 	case FAM_RENOIR:
 		break;
 	}
+	return EUNREACHABLE;
 }
 
 EXP int CALL set_prochot_deassertion_ramp(ryzen_access ry, uint32_t value) {
@@ -368,4 +390,5 @@ EXP int CALL set_prochot_deassertion_ramp(ryzen_access ry, uint32_t value) {
 		_do_adjust(0x20);
 		break;
 	}
+	return EUNREACHABLE;
 }
